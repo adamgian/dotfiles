@@ -25,19 +25,5 @@ sudo systemctl disable NetworkManager-wait-online.service
 #
 
 # Install Package Control
-wget https://packagecontrol.io/Package%20Control.sublime-package \
-	-P ~/FIXME
-
-# "A File Icon" icons
-wget https://github.com/SublimeText/AFileIcon/archive/refs/tags/3.22.0.zip \
-	-P "$HOME/Downloads/"
-unzip "$HOME/Downloads/3.22.0.zip" -d "$HOME/Downloads/" \
-	&& mv "$HOME/Downloads/AFileIcon-3.22.0" \
-		"$HOME/FIXME/Sublime Text 3/Packages/A File Icon/" \
-	&& rm ~/Downloads/3.22.0.zip
-
-# BracketHighlighter
-
-# Oceanic Next color theme
-wget https://raw.githubusercontent.com/voronianski/oceanic-next-color-scheme/master/Oceanic%20Next.tmTheme \
-	-P "$HOME/FIXME/Sublime Text 3/Packages/User/"
+wget 'https://packagecontrol.io/Package Control.sublime-package' \
+	-P "$HOME/.config/sublime-text/Installed Packages/"

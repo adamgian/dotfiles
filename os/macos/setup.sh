@@ -44,7 +44,6 @@ brew services start mongodb-community@6.0
 # Sublime Text
 wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
 	-O "$HOME/Downloads/sublime_text_build.zip"
-unzip ~/Downloads/sublime_text_build.zip -d ~/Downloads/ \
+unzip ~/Downloads/sublime_text_build.zip -d "$HOME/Downloads/" \
 	&& rm "$HOME/Downloads/sublime_text_build.zip"
-sudo /bin/cp -rf "$HOME/Downloads/Sublime Text.app" /Applications/ \
-	&& rm -rf "$HOME/Downloads/Sublime Text.app"
+sudo mv "$HOME/Downloads/Sublime Text.app" '/Applications/Sublime Text.app'

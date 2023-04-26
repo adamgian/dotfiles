@@ -1,6 +1,5 @@
 {
-	"color_scheme": "Packages/Oceanic Next Color Scheme/Oceanic Next.tmTheme",
-	"spell_check": true,
+	"color_scheme": "Packages/User/Oceanic Next.tmTheme",
 	"highlight_modified_tabs": true,
 	"font_face": "Hack",
 	"font_size": 14,

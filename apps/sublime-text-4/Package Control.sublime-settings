@@ -1,0 +1,31 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"A File Icon",
+		"Babel",
+		"BracketHighlighter",
+		"ColorHelper",
+		"CSS3",
+		"EditorConfig",
+		"Emmet",
+		"GitGutter",
+		"HTML5",
+		"Increment Selection",
+		"JSONLint",
+		"LSP-typescript",
+		"MarkdownEditing",
+		"Oceanic Next Color Scheme",
+		"Package Control",
+		"Rust Enhanced",
+		"Sass",
+		"SideBarEnhancements",
+		"Terminal",
+		"TOML",
+		"Vue Syntax Highlight",
+		"WakaTime",
+	],
+	"in_process_packages":
+	[
+	],
+}
