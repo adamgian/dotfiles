@@ -36,11 +36,19 @@ sudo apt install dconf-editor
 sudo apt install fonts-hack-ttf
 sudo apt install gnome-shell-extension-manager
 sudo apt install gnome-tweaks
+sudo apt install uuid-runtime
+sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip \
+	-O '/usr/share/fonts/truetype/hack-nerd-font.zip' \
+	&& sudo unzip '/usr/share/fonts/truetype/hack-nerd-font.zip' \
+		-d "/usr/share/fonts/truetype/hack-nerd-font" \
+		&& sudo rm '/usr/share/fonts/truetype/hack-nerd-font.zip'
 
 #
 # Utilities:
 #
 sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo apt install preload
 sudo apt install timeshift
 
@@ -70,6 +78,9 @@ sudo sh -c \
 	/etc/apt/sources.list.d/shiftkey-packages.list'
 sudo apt update && sudo apt install github-desktop
 
+# Starship shell prompt
+curl -sS https://starship.rs/install.sh | sh
+
 
 
 
@@ -86,6 +97,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && \
 # MongoDB
 # TODO
 
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 
 
 
@@ -94,7 +108,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && \
 #
 
 # Celluloid
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub io.github.celluloid_player.Celluloid
 
 # Enpass
@@ -108,6 +121,9 @@ sudo apt update && sudo apt install enpass
 sudo apt install firefox-esr
 sudo apt install webext-privacy-badger
 sudo apt install webext-ublock-origin-firefox
+
+# Handbrake
+flatpak install flathub fr.handbrake.ghb
 
 # Thunderbird
 sudo apt install thunderbird
