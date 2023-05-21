@@ -14,9 +14,6 @@ sudo sed -i '/^GRUB_CMDLINE_LINUX_DEFAULT/s/=.*$/="quiet loglevel=3"/' /etc/defa
 sudo sed -i 's/^#GRUB_TERMINAL/GRUB_TERMINAL/' /etc/default/grub
 sudo update-grub
 
-# No need to wait for the network (for me anyway)
-sudo systemctl disable NetworkManager-wait-online.service
-
 
 
 
