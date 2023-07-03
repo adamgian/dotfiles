@@ -25,6 +25,7 @@ sudo apt remove yelp
 # Preparation
 #
 sudo apt update && sudo apt upgrade -y
+sudo apt install libclang-dev
 
 
 
