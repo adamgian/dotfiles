@@ -71,6 +71,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && \
 
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup toolchain install nightly
 
 
 
