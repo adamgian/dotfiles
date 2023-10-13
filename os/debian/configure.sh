@@ -18,6 +18,15 @@ sudo update-grub
 
 
 #
+# System settings
+#
+
+# Start week on Monday
+sudo sed -i '/^END LC_TIME/ifirst_weekday 2' /usr/share/i18n/locales/en_AU
+
+
+
+#
 # Sublime Text 4
 #
 
