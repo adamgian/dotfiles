@@ -65,3 +65,10 @@ wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
 
 # Starship shell prompt
 curl -sS https://starship.rs/install.sh | sh
+
+# Alacritty terminal
+brew install alacritty
+
+# Firefox Developer Edition
+
+# Google Chrome
