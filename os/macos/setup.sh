@@ -64,10 +64,17 @@ wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
 			'/Applications/Sublime Text.app'
 
 # Starship shell prompt
-curl -sS https://starship.rs/install.sh | sh
+brew install starship
 
 # Alacritty terminal
 brew install alacritty
+
+# Oh My ZSH
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+chsh -s $(which zsh)
+
+# ZSH plugins
+brew install antigen
 
 # Firefox Developer Edition
 

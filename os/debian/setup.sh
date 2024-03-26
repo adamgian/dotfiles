@@ -115,6 +115,14 @@ sudo update-desktop-database
 cd ../
 rm -rf alacritty
 
+# Oh My ZSH
+sudo apt install zsh
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+chsh -s $(which zsh)
+
+# ZSH plugins
+curl -L git.io/antigen > $HOME/antigen.zsh
+
 # Firefox Developer Edition
 
 # Google Chrome
