@@ -8,17 +8,12 @@
     git clone --bare https://github.com/adamgian/dotfiles.git "$HOME/.dotfiles"
     ```
    
-2. Set up alias.
+2. Checkout branch.
     ```shell
-    alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-    ```
-    
-3. Checkout branch.
-    ```shell
-    dotfiles checkout macos
+    git --git-dir="$HOME/.dotfiles"/ --work-tree=$HOME checkout macos
     ```
 
-4. Install and configure software, utilities and other nice tid-bits.
+3. Install and configure software, utilities and other nice tid-bits.
     ```shell
     #TODO:
     bash setup.sh

@@ -1,0 +1,6 @@
+# dotfiles
+#
+# Prevent accidentally adding in files and requires
+# you to purposefully add file(s) to be committed.
+# e.g.: dotfiles add -f file_here
+*
