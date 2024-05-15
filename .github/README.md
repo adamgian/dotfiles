@@ -15,7 +15,6 @@
 
 3. Install and configure software, utilities and other nice tid-bits.
     ```shell
-    #TODO:
     bash setup.sh
     ```
 <br>

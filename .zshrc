@@ -96,6 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias sublime="open -a \"Sublime Text.app\""
 
 # ZSH plugins
 source /opt/homebrew/share/antigen/antigen.zsh
