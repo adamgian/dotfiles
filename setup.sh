@@ -5,6 +5,10 @@
 # Prerequisites
 # ----------------------------------------------------------
 
+# Sort out auth upfront
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # Xcode Command Line Tools
 xcode-select --install
 
@@ -23,6 +27,9 @@ brew install wget
 
 # TODO: Mullvad
 # https://mullvad.net/en/download/app/pkg/latest
+
+# ripgrep
+$ brew install ripgrep
 
 
 #
@@ -55,7 +62,7 @@ brew install alacritty
 # Google Chrome
 # TODO
 
-# Firefox (developer and standard editions)
+# Firefox Developer Editions
 # TODO
 
 # GitHub Desktop
@@ -83,10 +90,34 @@ brew install antigen
 # Miscellaneous
 # ----------------------------------------------------------
 
+# Enpass
+brew install --cask enpass
+
+# Firefox
+brew install --cask firefox
+
+# Hack nerd font
+sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip \
+	-O "/Library/Fonts/hack-nerd-font.zip" \
+	&& sudo unzip "/Library/Fonts/hack-nerd-font.zip" \
+	-d "/Library/Fonts/hack-nerd-font" \
+	&& sudo rm "/Library/Fonts/hack-nerd-font.zip"
+
 # Thunderbird
-# TODO
+brew install --cask thunderbird
 
 
 #
 # System preferences
 # ----------------------------------------------------------
+
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+
+#
+# Post-setup
+# ----------------------------------------------------------
+
+brew autoremove
+brew cleanup
