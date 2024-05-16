@@ -1,0 +1,23 @@
+{
+	"color_scheme": "Packages/Oceanic Next Color Scheme/Oceanic Next.tmTheme",
+	"highlight_modified_tabs": true,
+	"font_face": "Hack Nerd Font",
+	"font_size": 14,
+	"spell_check": true,
+	"detect_indentation": false,
+	"line_padding_top": 4,
+	"line_padding_bottom": 0,
+	"scroll_past_end": true,
+	"trim_trailing_white_space_on_save": true,
+	"ensure_newline_at_eof_on_save": true,
+	"theme": "Adaptive.sublime-theme",
+	"folder_exclude_patterns": [
+		"node_modules",
+	],
+	"goto_anything_exclude_gitignore": true,
+	"ignored_packages":[
+		"Rust",
+		"Vintage",
+	],
+	"index_files": true,
+}
