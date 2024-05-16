@@ -5,6 +5,10 @@
 # Preparation
 # ----------------------------------------------------------
 
+# Sort out auth upfront
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 sudo apt remove cheese
 sudo apt remove evolution
 sudo apt remove firefox-esr # Re-installing this
@@ -47,6 +51,9 @@ sudo apt install gnome-tweaks
 # Preload
 sudo apt install preload
 
+# ripgrep
+sudo apt install ripgrep
+
 # Timeshift
 sudo apt install timeshift
 
@@ -68,7 +75,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && \
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup toolchain install nightly
 
 
@@ -123,12 +130,12 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | \
 	sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt update && sudo apt install sublime-text
 
+# Sublime Text 4 Package Control
+wget "https://packagecontrol.io/Package Control.sublime-package" \
+	-P "$HOME/.config/sublime-text/Installed Packages/"
+
 # ZSH plugins
 curl -L git.io/antigen > $HOME/antigen.zsh
-
-# Sublime Text 4 Package Control
-wget 'https://packagecontrol.io/Package Control.sublime-package' \
-	-P "$HOME/.config/sublime-text/Installed Packages/"
 
 
 #
@@ -152,10 +159,10 @@ sudo apt install webext-ublock-origin-firefox
 
 # Hack nerd font
 sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip \
-	-O '/usr/share/fonts/truetype/hack-nerd-font.zip' \
-	&& sudo unzip '/usr/share/fonts/truetype/hack-nerd-font.zip' \
+	-O "/usr/share/fonts/truetype/hack-nerd-font.zip" \
+	&& sudo unzip "/usr/share/fonts/truetype/hack-nerd-font.zip" \
 	-d "/usr/share/fonts/truetype/hack-nerd-font" \
-	&& sudo rm '/usr/share/fonts/truetype/hack-nerd-font.zip'
+	&& sudo rm "/usr/share/fonts/truetype/hack-nerd-font.zip"
 
 # Handbrake
 flatpak install flathub fr.handbrake.ghb
@@ -177,16 +184,16 @@ sudo sed -i "/^END LC_TIME/ifirst_weekday 2" /usr/share/i18n/locales/en_AU
 
 # Grub bootloader:
 # Don't wait for user input or show options
-sudo sed -i '/^GRUB_TIMEOUT/s/=.*$/=0/' /etc/default/grub
+sudo sed -i "/^GRUB_TIMEOUT/s/=.*$/=0/" /etc/default/grub
 # Log fewer lines
 sudo sed -i '/^GRUB_CMDLINE_LINUX_DEFAULT/s/=.*$/="quiet loglevel=3"/' /etc/default/grub
 # Disable graphical terminal, render text only
-sudo sed -i 's/^#GRUB_TERMINAL/GRUB_TERMINAL/' /etc/default/grub
+sudo sed -i "s/^#GRUB_TERMINAL/GRUB_TERMINAL/" /etc/default/grub
 sudo update-grub
 
 
 #
-# Post
+# Post-setup
 # ----------------------------------------------------------
 
 # Clean up packages/dependencies
