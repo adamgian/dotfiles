@@ -9,6 +9,7 @@
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Removing unused default apps
 sudo apt remove cheese
 sudo apt remove evolution
 sudo apt remove gnome-color-manager
@@ -23,8 +24,15 @@ sudo apt remove transmission-gtk
 sudo apt remove yelp
 
 sudo apt update && sudo apt upgrade -y
+
 sudo apt install curl
+sudo apt install gnupg
 sudo apt install libclang-dev
+
+# Flatpak
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 
 #
@@ -34,13 +42,8 @@ sudo apt install libclang-dev
 # Dconf Editor
 sudo apt install dconf-editor
 
-# FFmpeg
-sudo apt install ffmpeg
-
-# Flatpak
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# fzf
+sudo apt install fzf
 
 # GNOME Shell extension manager
 sudo apt install gnome-shell-extension-manager
@@ -86,7 +89,13 @@ curl -L git.io/antigen > $HOME/antigen.zsh
 # ----------------------------------------------------------
 
 # MongoDB
-# TODO
+curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
+   --dearmor
+echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] \
+	http://repo.mongodb.org/apt/debian bookworm/mongodb-org/7.0 main" | \
+	sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+sudo apt install -y mongodb-org
 
 # NVM (Node.js)
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
@@ -174,6 +183,9 @@ wget -O - https://apt.enpass.io/keys/enpass-linux.key | \
 	tee /etc/apt/trusted.gpg.d/enpass.asc
 sudo apt update && sudo apt install enpass
 
+# FFmpeg
+sudo apt install ffmpeg
+
 # Firefox extensions
 sudo apt install webext-privacy-badger
 sudo apt install webext-ublock-origin-firefox
@@ -193,6 +205,9 @@ flatpak install flathub com.makemkv.MakeMKV
 
 # MKVToolNix
 sudo apt install mkvtoolnix
+
+# Obsidian
+flatpak install flathub md.obsidian.Obsidian
 
 # Runelite
 flatpak install flathub net.runelite.RuneLite
@@ -236,4 +251,4 @@ sudo update-grub
 # ----------------------------------------------------------
 
 # Clean up packages/dependencies
-sudo apt autoremove
+sudo apt autoremove --purge
