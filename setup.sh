@@ -25,6 +25,9 @@ brew install wget
 # Utilities
 # ----------------------------------------------------------
 
+# fzf
+brew install fzf
+
 # Mullvad
 brew install --cask mullvadvpn
 
@@ -115,6 +118,9 @@ sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.
 
 # ImageOptim
 brew install --cask imageoptim
+
+# Obsidian
+brew install --cask obsidian
 
 # Sketch
 brew install --cask sketch
