@@ -11,7 +11,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 sudo apt remove cheese
 sudo apt remove evolution
-sudo apt remove firefox-esr # Re-installing this
 sudo apt remove gnome-color-manager
 sudo apt remove gnome-games
 sudo apt remove gnome-sound-recorder
@@ -34,6 +33,9 @@ sudo apt install libclang-dev
 
 # Dconf Editor
 sudo apt install dconf-editor
+
+# FFmpeg
+sudo apt install ffmpeg
 
 # Flatpak
 sudo apt install flatpak
@@ -117,7 +119,13 @@ rm -rf alacritty
 
 # Firefox Developer Edition
 # TODO
-# https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US
+# sudo install -d -m 0755 /etc/apt/keyrings
+# wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg \
+# 	-O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+# echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] \
+# 	https://packages.mozilla.org/apt mozilla main" | \
+# 	sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+# sudo apt install firefox-devedition
 
 # GitHub Desktop
 wget -qO - https://apt.packages.shiftkey.dev/gpg.key | \
@@ -150,8 +158,14 @@ wget "https://packagecontrol.io/Package Control.sublime-package" \
 # Miscellaneous
 # ----------------------------------------------------------
 
+# Audacity
+sudo apt install audacity
+
 # Celluloid
 flatpak install flathub io.github.celluloid_player.Celluloid
+
+# Discord
+flatpak install flathub com.discordapp.Discord
 
 # Enpass
 echo "deb https://apt.enpass.io/ stable main" > \
@@ -160,8 +174,7 @@ wget -O - https://apt.enpass.io/keys/enpass-linux.key | \
 	tee /etc/apt/trusted.gpg.d/enpass.asc
 sudo apt update && sudo apt install enpass
 
-# Firefox
-sudo apt install firefox-esr
+# Firefox extensions
 sudo apt install webext-privacy-badger
 sudo apt install webext-ublock-origin-firefox
 
@@ -175,12 +188,30 @@ sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.
 # Handbrake
 flatpak install flathub fr.handbrake.ghb
 
+# MakeMKV
+flatpak install flathub com.makemkv.MakeMKV
+
+# MKVToolNix
+sudo apt install mkvtoolnix
+
+# Runelite
+flatpak install flathub net.runelite.RuneLite
+
+# Sound Juicer
+flatpak install flathub org.gnome.SoundJuicer
+
+# Stellarium
+sudo apt install stellarium
+
 # Thunderbird
 sudo apt install thunderbird
 
 # UFW
 sudo apt install ufw
 sudo ufw enable
+
+# VLC Player
+sudo apt install vlc
 
 
 #
