@@ -24,6 +24,7 @@ sudo apt remove transmission-gtk
 sudo apt remove yelp
 
 sudo apt update && sudo apt upgrade -y
+sudo apt install curl
 sudo apt install libclang-dev
 
 
@@ -45,8 +46,19 @@ sudo apt install gnome-shell-extension-manager
 # GNOME Tweak Tool
 sudo apt install gnome-tweaks
 
-# TODO: Mullvad
-# https://mullvad.net/en/download/app/pkg/latest
+# Mullvad
+sudo curl -fsSLo /usr/share/keyrings/mullvad-keyring.asc \
+	https://repository.mullvad.net/deb/mullvad-keyring.asc
+echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc \
+	arch=$( dpkg --print-architecture )] \
+	https://repository.mullvad.net/deb/stable $(lsb_release -cs) main" \
+	| sudo tee /etc/apt/sources.list.d/mullvad.list
+sudo apt install mullvad-vpn
+
+# Oh My ZSH
+sudo apt install zsh
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+chsh -s $(which zsh)
 
 # Preload
 sudo apt install preload
@@ -54,11 +66,17 @@ sudo apt install preload
 # ripgrep
 sudo apt install ripgrep
 
+# Starship shell prompt
+curl -sS https://starship.rs/install.sh | sh
+
 # Timeshift
 sudo apt install timeshift
 
 # uuid-runtime
 sudo apt install uuid-runtime
+
+# ZSH plugins
+curl -L git.io/antigen > $HOME/antigen.zsh
 
 
 #
@@ -99,6 +117,7 @@ rm -rf alacritty
 
 # Firefox Developer Edition
 # TODO
+# https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US
 
 # GitHub Desktop
 wget -qO - https://apt.packages.shiftkey.dev/gpg.key | \
@@ -114,14 +133,6 @@ sudo apt update && sudo apt install github-desktop
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
-# Oh My ZSH
-sudo apt install zsh
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-chsh -s $(which zsh)
-
-# Starship shell prompt
-curl -sS https://starship.rs/install.sh | sh
-
 # Sublime Text 4
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | \
 	gpg --dearmor | \
@@ -133,9 +144,6 @@ sudo apt update && sudo apt install sublime-text
 # Sublime Text 4 Package Control
 wget "https://packagecontrol.io/Package Control.sublime-package" \
 	-P "$HOME/.config/sublime-text/Installed Packages/"
-
-# ZSH plugins
-curl -L git.io/antigen > $HOME/antigen.zsh
 
 
 #
