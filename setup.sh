@@ -25,8 +25,8 @@ brew install wget
 # Utilities
 # ----------------------------------------------------------
 
-# TODO: Mullvad
-# https://mullvad.net/en/download/app/pkg/latest
+# Mullvad
+brew install --cask mullvadvpn
 
 # Oh My ZSH
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -73,18 +73,22 @@ rustup toolchain install nightly
 brew install alacritty
 
 # Google Chrome
-# TODO
+brew install google-chrome
 
 # Firefox Developer Edition
 brew install --cask firefox@developer-edition
 
 # GitHub Desktop
-# TODO
+wget https://central.github.com/deployments/desktop/desktop/latest/darwin \
+	-O "$HOME/Downloads/github-desktop.zip" \
+	&& unzip "$HOME/Downloads/github-desktop.zip" -d "$HOME/Downloads/" \
+	&& rm "$HOME/Downloads/github-desktop.zip" \
+	&& sudo mv "$HOME/Downloads/GitHub Desktop.app" "/Applications/GitHub Desktop.app"
 
 # Sublime Text
 wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
 	-O "$HOME/Downloads/sublime-text-build.zip" \
-	&& unzip ~/Downloads/sublime-text-build.zip -d "$HOME/Downloads/" \
+	&& unzip "$HOME/Downloads/sublime-text-build.zip" -d "$HOME/Downloads/" \
 	&& rm "$HOME/Downloads/sublime-text-build.zip" \
 	&& sudo mv "$HOME/Downloads/Sublime Text.app" "/Applications/Sublime Text.app"
 
