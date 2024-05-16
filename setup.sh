@@ -32,6 +32,9 @@ brew install wget
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 chsh -s $(which zsh)
 
+# pinentry
+brew install pinentry-mac
+
 # ripgrep
 $ brew install ripgrep
 
@@ -90,6 +93,9 @@ wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
 # Miscellaneous
 # ----------------------------------------------------------
 
+# Discord
+brew install --cask discord
+
 # Enpass
 brew install --cask enpass
 
@@ -103,8 +109,17 @@ sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.
 	-d "/Library/Fonts/hack-nerd-font" \
 	&& sudo rm "/Library/Fonts/hack-nerd-font.zip"
 
+# ImageOptim
+brew install --cask imageoptim
+
+# Sketch
+brew install --cask sketch
+
 # Thunderbird
 brew install --cask thunderbird
+
+# VLC Player
+brew install --cask vlc
 
 
 #
@@ -119,7 +134,7 @@ defaults write com.apple.dock static-only -bool true
 # Keyboard
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
-# Trackpad
+# Track-pad
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write com.apple.trackpad.forceClick -bool false
 
