@@ -28,8 +28,18 @@ brew install wget
 # TODO: Mullvad
 # https://mullvad.net/en/download/app/pkg/latest
 
+# Oh My ZSH
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+chsh -s $(which zsh)
+
 # ripgrep
 $ brew install ripgrep
+
+# Starship shell prompt
+brew install starship
+
+# ZSH plugins
+brew install antigen
 
 
 #
@@ -62,18 +72,11 @@ brew install alacritty
 # Google Chrome
 # TODO
 
-# Firefox Developer Editions
-# TODO
+# Firefox Developer Edition
+brew install --cask firefox@developer-edition
 
 # GitHub Desktop
 # TODO
-
-# Oh My ZSH
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-chsh -s $(which zsh)
-
-# Starship shell prompt
-brew install starship
 
 # Sublime Text
 wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
@@ -81,9 +84,6 @@ wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
 	&& unzip ~/Downloads/sublime-text-build.zip -d "$HOME/Downloads/" \
 	&& rm "$HOME/Downloads/sublime-text-build.zip" \
 	&& sudo mv "$HOME/Downloads/Sublime Text.app" "/Applications/Sublime Text.app"
-
-# ZSH plugins
-brew install antigen
 
 
 #
@@ -111,8 +111,17 @@ brew install --cask thunderbird
 # System preferences
 # ----------------------------------------------------------
 
+# Dock
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock mineffect suck
+defaults write com.apple.dock static-only -bool true
+
+# Keyboard
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Trackpad
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+defaults write com.apple.trackpad.forceClick -bool false
 
 
 #
