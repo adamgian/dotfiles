@@ -31,10 +31,6 @@ brew install fzf
 # Mullvad
 brew install --cask mullvadvpn
 
-# Oh My ZSH
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-chsh -s $(which zsh)
-
 # pinentry
 brew install pinentry-mac
 
@@ -43,9 +39,6 @@ $ brew install ripgrep
 
 # Starship shell prompt
 brew install starship
-
-# ZSH plugins
-brew install antigen
 
 
 #
@@ -141,12 +134,27 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock mineffect suck
 defaults write com.apple.dock static-only -bool true
 
+# Finder
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+# Open finder window when a volume is mounted
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+# Show file extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# Don't create .DS_Store files on network and external volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
 # Keyboard
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # Track-pad
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write com.apple.trackpad.forceClick -bool false
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 
 #
