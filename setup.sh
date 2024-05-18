@@ -60,11 +60,6 @@ echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc \
 	| sudo tee /etc/apt/sources.list.d/mullvad.list
 sudo apt install mullvad-vpn
 
-# Oh My ZSH
-sudo apt install zsh
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-chsh -s $(which zsh)
-
 # Preload
 sudo apt install preload
 
@@ -80,8 +75,9 @@ sudo apt install timeshift
 # uuid-runtime
 sudo apt install uuid-runtime
 
-# ZSH plugins
-curl -L git.io/antigen > $HOME/antigen.zsh
+# ZSH
+sudo apt install zsh
+chsh -s $(which zsh)
 
 
 #
