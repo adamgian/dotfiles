@@ -1,0 +1,13 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Adam Gian
+	email = contact@adamgian.com
+	signingkey = 2B55C49027988573
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
