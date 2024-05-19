@@ -13,6 +13,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 sudo apt remove cheese
 sudo apt remove evolution
 sudo apt remove gnome-color-manager
+sudo apt remove gnome-contacts
 sudo apt remove gnome-games
 sudo apt remove gnome-sound-recorder
 sudo apt remove gnome-weather
@@ -163,6 +164,9 @@ wget "https://packagecontrol.io/Package Control.sublime-package" \
 # Miscellaneous
 # ----------------------------------------------------------
 
+# Amberol
+flatpak install flathub io.bassi.Amberol
+
 # Audacity
 sudo apt install audacity
 
@@ -186,12 +190,15 @@ sudo apt install ffmpeg
 sudo apt install webext-privacy-badger
 sudo apt install webext-ublock-origin-firefox
 
+# fre:ac
+flatpak install flathub org.freac.freac
+
 # Hack nerd font
 sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip \
-	-O "/usr/share/fonts/truetype/hack-nerd-font.zip" \
-	&& sudo unzip "/usr/share/fonts/truetype/hack-nerd-font.zip" \
-	-d "/usr/share/fonts/truetype/hack-nerd-font" \
-	&& sudo rm "/usr/share/fonts/truetype/hack-nerd-font.zip"
+	-O "/usr/share/fonts/truetype/hack-nerd-font.zip"
+sudo unzip "/usr/share/fonts/truetype/hack-nerd-font.zip" \
+	-d "/usr/share/fonts/truetype/hack-nerd-font"
+sudo rm "/usr/share/fonts/truetype/hack-nerd-font.zip"
 
 # Handbrake
 flatpak install flathub fr.handbrake.ghb
@@ -205,6 +212,9 @@ sudo apt install mkvtoolnix
 # Obsidian
 flatpak install flathub md.obsidian.Obsidian
 
+# OBS Studio
+flatpak install flathub com.obsproject.Studio
+
 # Runelite
 flatpak install flathub net.runelite.RuneLite
 
@@ -213,6 +223,9 @@ flatpak install flathub org.gnome.SoundJuicer
 
 # Stellarium
 sudo apt install stellarium
+
+# Tagger
+flatpak install flathub org.nickvision.tagger
 
 # Thunderbird
 sudo apt install thunderbird
@@ -241,10 +254,30 @@ sudo sed -i '/^GRUB_CMDLINE_LINUX_DEFAULT/s/=.*$/="quiet loglevel=3"/' /etc/defa
 sudo sed -i "s/^#GRUB_TERMINAL/GRUB_TERMINAL/" /etc/default/grub
 sudo update-grub
 
+# Gnome extensions
+# App hider
+wget https://github.com/LynithDev/gnome-app-hider/releases/latest/download/app-hider@lynith.dev.zip \
+	-O "$HOME/app-hider.zip"
+sudo unzip "$HOME/dash-to-dock.zip" \
+	-d "$HOME/.local/share/gnome-shell/extensions/app-hider@lynith.dev"
+sudo rm "$HOME/app-hider.zip"
+# Dash to Dock
+wget https://github.com/micheleg/dash-to-dock/releases/latest/download/dash-to-dock@micxgx.gmail.com.zip \
+	-O "$HOME/dash-to-dock.zip"
+sudo unzip "$HOME/dash-to-dock.zip" \
+	-d "$HOME/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
+sudo rm "$HOME/dash-to-dock.zip"
+
+# Re-arrange Gnome app grid alphabetically
+gsettings set org.gnome.shell app-picker-layout "[]"
+
 
 #
 # Post-setup
 # ----------------------------------------------------------
+
+# Refresh Gnome Desktop
+killall -3 gnome-shell
 
 # Clean up packages/dependencies
 sudo apt autoremove --purge
