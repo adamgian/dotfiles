@@ -26,6 +26,7 @@ sudo apt remove yelp
 
 sudo apt update && sudo apt upgrade -y
 
+sudo apt install cmake
 sudo apt install curl
 sudo apt install gnupg
 sudo apt install libclang-dev
@@ -111,17 +112,15 @@ rustup toolchain install nightly
 
 # Alacritty terminal
 git clone https://github.com/alacritty/alacritty.git
-cd alacritty
-apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev \
+apt install pkg-config libfreetype6-dev libfontconfig1-dev \
 	libxcb-xfixes0-dev libxkbcommon-dev python3
-cargo build --release
+cd alacritty && cargo build --release
 sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 sudo cp target/release/alacritty /usr/local/bin
 sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
 sudo desktop-file-install extra/linux/Alacritty.desktop
 sudo update-desktop-database
-cd ../
-rm -rf alacritty
+cd ../ && rm -rf alacritty
 
 # Firefox Developer Edition
 # TODO
@@ -146,6 +145,14 @@ sudo apt update && sudo apt install github-desktop
 # Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
+
+# Neovim
+sudo apt install ninja-build gettext unzip build-essential
+git clone https://github.com/neovim/neovim
+(cd neovim && git checkout stable)
+(cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo)
+(cd neovim/build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb)
+sudo rm -rf neovim
 
 # Sublime Text 4
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | \
