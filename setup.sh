@@ -68,11 +68,11 @@ rustup toolchain install nightly
 # Alacritty terminal
 brew install alacritty
 
-# Google Chrome
-brew install google-chrome
-
 # Firefox Developer Edition
 brew install --cask firefox@developer-edition
+
+# Google Chrome
+brew install google-chrome
 
 # GitHub Desktop
 wget https://central.github.com/deployments/desktop/desktop/latest/darwin \
@@ -80,6 +80,9 @@ wget https://central.github.com/deployments/desktop/desktop/latest/darwin \
 	&& unzip "$HOME/Downloads/github-desktop.zip" -d "$HOME/Downloads/" \
 	&& rm "$HOME/Downloads/github-desktop.zip" \
 	&& sudo mv "$HOME/Downloads/GitHub Desktop.app" "/Applications/GitHub Desktop.app"
+
+# Neovim
+brew install neovim
 
 # Sublime Text
 wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
@@ -114,6 +117,9 @@ brew install --cask imageoptim
 
 # Obsidian
 brew install --cask obsidian
+
+# OpenMTP
+brew install openmtp --cask
 
 # Sketch
 brew install --cask sketch
@@ -155,6 +161,13 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Track-pad
 defaults write com.apple.trackpad.forceClick -bool false
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+# Display
+# Use sub-pixel font rendering on external monitors
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
+# HiDPI display mode
+sudo defaults write /Library/Preferences/com.apple.windowserver \
+	DisplayResolutionEnabled -bool true
 
 
 #
