@@ -47,7 +47,7 @@ if [[ ! -e "$HOME/.zsh/zsh-autosuggestions" ]]; then
 		"https://github.com/zsh-users/zsh-autosuggestions.git" \
 		"$HOME/.zsh/zsh-autosuggestions"
 	zcompile-all \
-		$HOME/.zsh/zsh-autosuggestions/{zsh-autosuggestions.zsh,src/**/*.zsh}
+		"$HOME/.zsh/zsh-autosuggestions/"{zsh-autosuggestions.zsh,src/**/*.zsh}
 fi
 
 # zsh-syntax-highlighting
@@ -56,7 +56,7 @@ if [[ ! -e "$HOME/.zsh/zsh-syntax-highlighting" ]]; then
 		"https://github.com/zsh-users/zsh-syntax-highlighting.git" \
 		"$HOME/.zsh/zsh-syntax-highlighting"
 	zcompile-all \
-		$HOME/.zsh/zsh-syntax-highlighting/{zsh-syntax-highlighting.zsh,highlighters/*/*.zsh}
+		"$HOME/.zsh/zsh-syntax-highlighting/"{zsh-syntax-highlighting.zsh,highlighters/*/*.zsh}
 fi
 
 autoload -U compinit && compinit
@@ -74,4 +74,3 @@ source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # ----------------------------------------------------------
 
 eval "$(starship init zsh)"
-# eval "$(rbenv init - zsh)"
