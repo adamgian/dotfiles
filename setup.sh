@@ -115,6 +115,13 @@ sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.
 # ImageOptim
 brew install --cask imageoptim
 
+# KMonad
+git clone --recursive https://github.com/kmonad/kmonad.git
+(cd kmonad/ && \
+	open c_src/mac/Karabiner-DriverKit-VirtualHIDDevice/dist/Karabiner-DriverKit-VirtualHIDDevice-3.1.0.pkg)
+(cd kmonad/ && \
+	/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate)
+
 # Obsidian
 brew install --cask obsidian
 
@@ -141,8 +148,6 @@ defaults write com.apple.dock mineffect suck
 defaults write com.apple.dock static-only -bool true
 
 # Finder
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.finder QuitMenuItem -bool true
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # Open finder window when a volume is mounted
