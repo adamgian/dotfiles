@@ -128,6 +128,13 @@ brew install --cask obsidian
 # OpenMTP
 brew install openmtp --cask
 
+# SD Memory Card Formatter
+wget https://www.sdcard.org/downloads/formatter/eula_mac/SDCardFormatterv5_Mac.zip \
+	-O "$HOME/Downloads/SDCardFormatter.zip" \
+	&& unzip "$HOME/Downloads/SDCardFormatter.zip" -d "$HOME/Downloads/" \
+	&& rm "$HOME/Downloads/SDCardFormatter.zip" \
+	&& sudo mv "$HOME/Downloads/SD Card Formatter.app" "/Applications/SD Card Formatter.app"
+
 # Sketch
 brew install --cask sketch
 
