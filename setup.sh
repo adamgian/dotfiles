@@ -237,6 +237,9 @@ flatpak install flathub org.nickvision.tagger
 # Thunderbird
 sudo apt install thunderbird
 
+# Trimage
+sudo apt install trimage
+
 # UFW
 sudo apt install ufw
 sudo ufw enable
@@ -274,6 +277,10 @@ wget https://github.com/micheleg/dash-to-dock/releases/latest/download/dash-to-d
 sudo unzip "$HOME/dash-to-dock.zip" \
 	-d "$HOME/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/"
 sudo rm "$HOME/dash-to-dock.zip"
+
+# OpenVPN plugin
+# Which is not installed by default
+sudo apt install network-manager-openvpn-gnome
 
 # Re-arrange Gnome app grid alphabetically
 gsettings set org.gnome.shell app-picker-layout "[]"
