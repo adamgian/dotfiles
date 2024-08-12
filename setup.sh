@@ -28,7 +28,10 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt install cmake
 sudo apt install curl
+sudo apt install dirmngr
+sudo apt install gawk
 sudo apt install gnupg
+sudo apt install gpg
 sudo apt install libclang-dev
 
 # Flatpak
@@ -86,6 +89,12 @@ chsh -s $(which zsh)
 # Development stack
 # ----------------------------------------------------------
 
+# asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+
+# asdf plugins
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
 # MongoDB
 curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
    sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
@@ -94,12 +103,6 @@ echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] \
 	http://repo.mongodb.org/apt/debian bookworm/mongodb-org/7.0 main" | \
 	sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 sudo apt install -y mongodb-org
-
-# NVM (Node.js)
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && \
-	printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Rust
 curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh

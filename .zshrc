@@ -71,12 +71,8 @@ source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # Initialise
 # ----------------------------------------------------------
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-# This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# asdf
+. "$HOME/.asdf/asdf.sh"
 
 # Starship
 eval "$(starship init zsh)"
