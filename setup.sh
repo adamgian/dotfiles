@@ -59,6 +59,9 @@ echo \
 	sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
 
 # fzf
 sudo apt install fzf
@@ -225,6 +228,14 @@ sudo rm "/usr/share/fonts/truetype/hack-nerd-font.zip"
 
 # Handbrake
 flatpak install flathub fr.handbrake.ghb
+
+# KMonad
+git clone --recursive https://github.com/kmonad/kmonad.git
+(cd kmonad/ && \
+	sudo docker build -t kmonad-builder .)
+rm -rf kmonad
+docker run --rm -it -v ${PWD}:/host/ kmonad-builder bash -c 'cp -vp /root/.local/bin/kmonad /host/'
+docker rmi kmonad-builder
 
 # MakeMKV
 flatpak install flathub com.makemkv.MakeMKV
