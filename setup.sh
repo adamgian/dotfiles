@@ -216,6 +216,9 @@ sudo apt install ffmpeg
 sudo apt install webext-privacy-badger
 sudo apt install webext-ublock-origin-firefox
 
+# Fragments
+flatpak install flathub de.haeckerfelix.Fragments
+
 # fre:ac
 flatpak install flathub org.freac.freac
 
@@ -257,6 +260,9 @@ flatpak install flathub org.gnome.SoundJuicer
 
 # Stellarium
 sudo apt install stellarium
+
+# Switcheroo
+flatpak install flathub io.gitlab.adhami3310.Converter
 
 # Tagger
 flatpak install flathub org.nickvision.tagger
