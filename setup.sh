@@ -233,12 +233,11 @@ sudo rm "/usr/share/fonts/truetype/hack-nerd-font.zip"
 flatpak install flathub fr.handbrake.ghb
 
 # KMonad
-git clone --recursive https://github.com/kmonad/kmonad.git
-(cd kmonad/ && \
-	sudo docker build -t kmonad-builder .)
-rm -rf kmonad
-docker run --rm -it -v ${PWD}:/host/ kmonad-builder bash -c 'cp -vp /root/.local/bin/kmonad /host/'
+docker build -t kmonad-builder github.com/kmonad/kmonad.git
+docker run --rm -it -v ${PWD}:/host/ kmonad-builder bash -c 'cp -vp /root/.local/bin/kmonad /host/bin'
 docker rmi kmonad-builder
+sudo groupadd uinput
+sudo usermod -aG input,uinput $USER
 
 # MakeMKV
 flatpak install flathub com.makemkv.MakeMKV
@@ -317,6 +316,10 @@ sudo apt install network-manager-openvpn-gnome
 
 # Re-arrange Gnome app grid alphabetically
 gsettings set org.gnome.shell app-picker-layout "[]"
+# Add minimize button to application window
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,close"
+
+# Apply KMonad keymap
 
 
 #
