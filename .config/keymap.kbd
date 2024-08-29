@@ -1,7 +1,5 @@
 (defcfg
-	;;input (device-file "/dev/input/by-id/usb-04d9_USB-HID_Keyboard-event-if02")
 	input (device-file "/dev/input/by-id/usb-04d9_USB-HID_Keyboard-event-kbd")
-	;; input (device-file "/dev/input/by-id/usb-04d9_USB-HID_Keyboard-if02-event-kbd")
 	output (uinput-sink "My KMonad output")
 
 	fallthrough true
@@ -9,23 +7,24 @@
 )
 
 
+(defalias
+	ce (tap-hold-next-release 250 esc lctl)
+)
+
 (defsrc
-	esc  f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12  comp  del
-	grv  1  2  3  4  5  6  7  8  9  0   -   =    bspc  home
-	tab  q  w  e  r  t  y  u  i  o  p   [   ]     \    pgup
-	caps a  s  d  f  g  h  j  k  l  ;   '     ret      pgdn
-	lsft    z  x  c  v  b  n  m  ,  .   /   rsft  up   end
-	lctl lmet lalt     spc    ralt  fn rctl left down right
+	esc  f1  f2  f3  f4  f5  f6  f7  f8  f9  f10 f11 f12   comp del
+	grv  1   2   3   4   5   6   7   8   9   0   -   =     bspc home
+	tab  q   w   e   r   t   y   u   i   o   p   [   ]     \    pgup
+	caps a   s   d   f   g   h   j   k   l   ;   '      ret     pgdn
+	lsft     z   x   c   v   b   n   m   ,   .   /   rsft   up  end
+	lctl lmet lalt          spc         ralt fn  rctl left down right
 )
 
-(deflayer test
-	esc  f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12  comp  del
-	grv  1  2  3  4  5  6  7  8  9  0   -   =    bspc  home
-	tab  q  w  e  r  t  y  u  i  o  p   [   ]     \    pgup
-	A    a  s  d  f  g  h  j  k  l  ;   '     ret      pgdn
-	lsft    z  x  c  v  b  n  m  ,  .   /   rsft  up   end
-	lctl lmet lalt     spc    ralt  fn rctl left down right
+(deflayer enhancements
+	esc  f1  f2  f3  f4  f5  f6  f7  f8  f9  f10 f11 f12   comp del
+	grv  1   2   3   4   5   6   7   8   9   0   -   =     bspc home
+	tab  q   w   e   r   t   y   u   i   o   p   [   ]     \    pgup
+	@ce  a   s   d   f   g   h   j   k   l   ;   '      ret     pgdn
+	lsft     z   x   c   v   b   n   m   ,   .   /   rsft   up  end
+	lctl lmet lalt          spc         ralt fn  rctl left down right
 )
-
-
-;;
