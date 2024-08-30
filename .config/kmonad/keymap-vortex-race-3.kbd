@@ -1,6 +1,6 @@
 (defcfg
 	input (device-file "/dev/input/by-id/usb-04d9_USB-HID_Keyboard-event-kbd")
-	output (uinput-sink "My KMonad output")
+	output (uinput-sink "Vortex Race 3")
 
 	fallthrough true
 	allow-cmd true

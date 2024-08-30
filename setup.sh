@@ -26,6 +26,8 @@ sudo apt remove yelp
 
 sudo apt update && sudo apt upgrade -y
 
+# Prerequisites/dependencies
+sudo apt install at
 sudo apt install cmake
 sudo apt install ca-certificates
 sudo apt install curl
@@ -106,7 +108,7 @@ chsh -s $(which zsh)
 # ----------------------------------------------------------
 
 # asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.14.0
 
 # asdf plugins
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -238,6 +240,7 @@ docker run --rm -it -v ${PWD}:/host/ kmonad-builder bash -c 'cp -vp /root/.local
 docker rmi kmonad-builder
 sudo groupadd uinput
 sudo usermod -aG input,uinput $USER
+sudo cp "$HOME/.config/kmonad/kmonad.rules" "/etc/udev/rules.d/"
 
 # MakeMKV
 flatpak install flathub com.makemkv.MakeMKV
