@@ -1,0 +1,19 @@
+# Note: this file is a git repo (dotfiles) copy.
+# Should be copied into: /etc/systemd/system/
+
+[Unit]
+Description=Start Kmonad
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/adamg/bin/kmonad /home/adamg/.config/kmonad/keymap-vortex-race-3.kbd
+Restart=always
+RestartSec=5
+StandardOutput=null
+StandardError=null
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

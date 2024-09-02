@@ -8,7 +8,7 @@
 
 
 (defalias
-	ce (tap-hold-next-release 250 esc lctl)
+	ce (tap-hold-next-release 100 esc lctl)
 )
 
 (defsrc

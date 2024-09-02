@@ -27,7 +27,6 @@ sudo apt remove yelp
 sudo apt update && sudo apt upgrade -y
 
 # Prerequisites/dependencies
-sudo apt install at
 sudo apt install cmake
 sudo apt install ca-certificates
 sudo apt install curl
@@ -323,6 +322,11 @@ gsettings set org.gnome.shell app-picker-layout "[]"
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,close"
 
 # Apply KMonad keymap
+sudo cp "/.config/kmonad/kmonad.rules" "/etc/udev/rules.d"
+sudo cp "$HOME/.config/systemd/user/kmonad.service" "/etc/systemd/system/"
+sudo systemctl daemon-reload
+sudo systemctl start kmonad.service
+sudo systemctl enable kmonad.service
 
 
 #

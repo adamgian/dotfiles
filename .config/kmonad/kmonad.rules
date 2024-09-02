@@ -1,7 +1,5 @@
-# Note: this file should be copied to: /etc/udev/rules.d/
+# Note: this file is a git repo (dotfiles) copy
+# Should be copied into: /etc/udev/rules.d/
 
 # Set uinput device file permission
 KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
-
-# Launch kmonad
-SUBSYSTEM=="input", ACTION=="add", ATTRS{idVendor}=="04d9", ATTRS{idProduct}=="0192", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/adamg/.Xauthority", ENV{HOME}="/home/adamg", RUN+="/home/adamg/.scripts/start-kmonad.sh"
