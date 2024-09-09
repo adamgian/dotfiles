@@ -320,6 +320,8 @@ sudo apt install network-manager-openvpn-gnome
 gsettings set org.gnome.shell app-picker-layout "[]"
 # Add minimize button to application window
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,close"
+# Show size under titles (icon view)
+gsettings set org.gnome.nautilus.icon-view captions "['size', 'none', 'none']"
 
 # Apply KMonad keymap
 sudo cp "/.config/kmonad/kmonad.rules" "/etc/udev/rules.d"
