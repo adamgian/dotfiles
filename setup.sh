@@ -98,6 +98,10 @@ wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
 	&& rm "$HOME/Downloads/sublime-text-build.zip" \
 	&& sudo mv "$HOME/Downloads/Sublime Text.app" "/Applications/Sublime Text.app"
 
+# Sublime Text 4 Package Control
+wget "https://packagecontrol.io/Package Control.sublime-package" \
+ 	-P "$HOME/Library/Application Support/Sublime Text/Installed Packages/"
+
 
 #
 # Miscellaneous
