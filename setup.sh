@@ -7,15 +7,22 @@
 
 # Sort out auth upfront
 sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do 
+	sudo -n true; 
+ 	sleep 60; 
+  	kill -0 "$$" || exit; 
+done 2>/dev/null &
 
 # Xcode Command Line Tools
 xcode-select --install
 
+# Rosetta
+sudo softwareupdate --install-rosetta
+
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew update
 eval "$(/opt/homebrew/bin/brew shellenv)"
+brew update
 
 # wget
 brew install wget
