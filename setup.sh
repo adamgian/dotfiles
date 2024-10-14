@@ -182,7 +182,8 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # Track-pad
-defaults write com.apple.trackpad.forceClick -bool false
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Display
@@ -196,6 +197,9 @@ sudo defaults write /Library/Preferences/com.apple.windowserver \
 #
 # Post-setup
 # ----------------------------------------------------------
+
+# Reload updated settings
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 brew autoremove
 brew cleanup
