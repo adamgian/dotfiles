@@ -35,6 +35,9 @@ brew install wget
 # fzf
 brew install fzf
 
+# GnuPG
+brew install gnupg gnupg2
+
 # Mullvad
 brew install --cask mullvadvpn
 
@@ -42,7 +45,9 @@ brew install --cask mullvadvpn
 brew install pinentry-mac
 
 # ripgrep
-$ brew install ripgrep
+# May need to be installed with:
+# arch -arm64 brew install ripgrep
+brew install ripgrep
 
 # Starship shell prompt
 brew install starship
