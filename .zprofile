@@ -6,3 +6,5 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
+
+export GPG_TTY=$(tty)

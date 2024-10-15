@@ -7,10 +7,10 @@
 
 # Sort out auth upfront
 sudo -v
-while true; do 
-	sudo -n true; 
- 	sleep 60; 
-  	kill -0 "$$" || exit; 
+while true; do
+	sudo -n true;
+ 	sleep 60;
+  	kill -0 "$$" || exit;
 done 2>/dev/null &
 
 # Xcode Command Line Tools
@@ -36,7 +36,7 @@ brew install wget
 brew install fzf
 
 # GnuPG
-brew install gnupg gnupg2
+brew install gpg2
 
 # Mullvad
 brew install --cask mullvadvpn
@@ -202,6 +202,11 @@ sudo defaults write /Library/Preferences/com.apple.windowserver \
 #
 # Post-setup
 # ----------------------------------------------------------
+
+# Generate a GPG key
+gpg --default-new-key-algo rsa4096 --gen-key
+
+git config --global pull.rebase false
 
 # Reload updated settings
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
