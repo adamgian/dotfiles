@@ -6,8 +6,10 @@
 [user]
 	name = Adam Gian
 	email = contact@adamgian.com
-	signingkey = 2B55C49027988573
+	signingkey = 8E32320786E98B6A
 [commit]
 	gpgsign = true
 [gpg]
 	program = gpg
+[credential]
+	username = adamgian

@@ -206,8 +206,6 @@ sudo defaults write /Library/Preferences/com.apple.windowserver \
 # Generate a GPG key
 gpg --default-new-key-algo rsa4096 --gen-key
 
-git config --global pull.rebase false
-
 # Reload updated settings
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
