@@ -146,10 +146,10 @@ brew install openmtp --cask
 
 # SD Memory Card Formatter
 wget https://www.sdcard.org/downloads/formatter/eula_mac/SDCardFormatterv5_Mac.zip \
-	-O "$HOME/Downloads/SDCardFormatter.zip" \
-	&& unzip "$HOME/Downloads/SDCardFormatter.zip" -d "$HOME/Downloads/" \
-	&& rm "$HOME/Downloads/SDCardFormatter.zip" \
-	&& sudo mv "$HOME/Downloads/SD Card Formatter.app" "/Applications/SD Card Formatter.app"
+	-O "SDCardFormatter.zip" \
+	&& unzip "SDCardFormatter.zip" -d "$HOME/Downloads/" \
+	&& rm "SDCardFormatter.zip" \
+	&& sudo installer -pkg "$HOME/Downloads/SDCardFormatterv5_Mac/Install SD Card Formatter 5.0.2.mpkg" -target /
 
 # Sketch
 brew install --cask sketch
@@ -190,6 +190,9 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+# Menu bar
+defaults write com.apple.controlcenter BatteryShowPercentage -bool true
 
 # Display
 # Use sub-pixel font rendering on external monitors
