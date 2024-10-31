@@ -217,9 +217,6 @@ sudo apt install ffmpeg
 sudo apt install webext-privacy-badger
 sudo apt install webext-ublock-origin-firefox
 
-# Fragments
-flatpak install flathub de.haeckerfelix.Fragments
-
 # fre:ac
 flatpak install flathub org.freac.freac
 
@@ -252,6 +249,9 @@ flatpak install flathub md.obsidian.Obsidian
 
 # OBS Studio
 flatpak install flathub com.obsproject.Studio
+
+# qBittorrent
+sudo apt install qbittorrent
 
 # Runelite
 flatpak install flathub net.runelite.RuneLite
