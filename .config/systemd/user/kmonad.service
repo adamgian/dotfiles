@@ -7,7 +7,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/home/adamg/bin/kmonad /home/adamg/.config/kmonad/keymap-vortex-race-3.kbd
+ExecStart=/home/adamg/bin/kmonad /home/adamg/.config/kmonad/keymap-keychron-c1.kbd
 Restart=always
 RestartSec=5
 StandardOutput=null

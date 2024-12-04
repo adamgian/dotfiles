@@ -36,6 +36,13 @@ sudo apt install gnupg
 sudo apt install gpg
 sudo apt install libclang-dev
 
+# .NET framework
+mkdir $HOME/dotnet_install
+(cd $HOME/dotnet_install
+	&& curl -L https://aka.ms/install-dotnet-preview -o install-dotnet-preview.sh)
+sudo bash $HOME/dotnet_install/install-dotnet-preview.sh
+rm -rf $HOME/dotnet_install
+
 # Flatpak
 sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
@@ -241,6 +248,9 @@ sudo cp "$HOME/.config/kmonad/kmonad.rules" "/etc/udev/rules.d/"
 # MakeMKV
 flatpak install flathub com.makemkv.MakeMKV
 
+# MediaInfo
+flatpak install flathub net.mediaarea.MediaInfo
+
 # MKVToolNix
 sudo apt install mkvtoolnix
 
@@ -252,6 +262,17 @@ flatpak install flathub com.obsproject.Studio
 
 # qBittorrent
 sudo apt install qbittorrent
+# Jackett service
+(cd /opt
+	&& f=Jackett.Binaries.LinuxAMDx64.tar.gz
+	&& sudo wget -Nc https://github.com/Jackett/Jackett/releases/latest/download/"$f"
+	&& sudo tar -xzf "$f"
+	&& sudo rm -f "$f" && cd Jackett*
+	&& sudo chown $(whoami):$(id -g) -R "/opt/Jackett"
+	&& sudo ./install_service_systemd.sh
+	&& systemctl status jackett.service
+	&& cd -
+	&& echo -e "\nVisit http://127.0.0.1:9117")
 
 # Runelite
 flatpak install flathub net.runelite.RuneLite
