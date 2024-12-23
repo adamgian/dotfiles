@@ -48,6 +48,14 @@ sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# GPU driver
+# AMD:
+sudo apt install firmware-amd-graphics
+sudo apt install libgl1-mesa-dri
+sudo apt install libglx-mesa0
+sudo apt install mesa-vulkan-drivers
+sudo apt install xserver-xorg-video-all
+
 
 #
 # Utilities
