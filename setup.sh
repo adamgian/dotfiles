@@ -131,12 +131,8 @@ sudo wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.
 # ImageOptim
 brew install --cask imageoptim
 
-# KMonad
-git clone --recursive https://github.com/kmonad/kmonad.git
-(cd kmonad/ && \
-	open c_src/mac/Karabiner-DriverKit-VirtualHIDDevice/dist/Karabiner-DriverKit-VirtualHIDDevice-3.1.0.pkg)
-(cd kmonad/ && \
-	/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate)
+# Karabiner-elements
+brew install --cask karabiner-elements
 
 # Obsidian
 brew install --cask obsidian
