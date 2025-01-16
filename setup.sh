@@ -57,16 +57,17 @@ brew install starship
 # Development stack
 # ----------------------------------------------------------
 
+# asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
+
+# asdf plugins
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+
 # MongoDB
 brew tap mongodb/brew
 brew install mongodb-community@6.0
 brew services start mongodb-community@6.0
-
-# NVM (Node.js)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && \
-	printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Rust
 curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh

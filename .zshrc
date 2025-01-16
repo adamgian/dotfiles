@@ -74,3 +74,6 @@ source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # ----------------------------------------------------------
 
 eval "$(starship init zsh)"
+
+# asdf
+source "$HOME/.asdf/asdf.sh"

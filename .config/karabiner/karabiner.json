@@ -7,14 +7,14 @@
                         "description": "Change caps_lock to Command if pressed with other keys, to escape if pressed alone.",
                         "manipulators": [
                             {
-                                "type": "basic"
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 200 },
                                 "to": [{ "key_code": "left_command" }],
                                 "to_if_alone": [{ "key_code": "escape" }],
-                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 200 }
+                                "type": "basic"
                             }
                         ]
                     }
