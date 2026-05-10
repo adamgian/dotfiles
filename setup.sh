@@ -50,6 +50,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 # GPU driver
 # AMD:
+# https://wiki.debian.org/AtiHowTo
 sudo apt install firmware-amd-graphics
 sudo apt install libgl1-mesa-dri
 sudo apt install libglx-mesa0
@@ -209,6 +210,9 @@ wget "https://packagecontrol.io/Package Control.sublime-package" \
 # Amberol
 flatpak install flathub io.bassi.Amberol
 
+# Anki
+flatpak install flathub net.ankiweb.Anki
+
 # Audacity
 sudo apt install audacity
 
@@ -261,9 +265,6 @@ flatpak install flathub net.mediaarea.MediaInfo
 
 # MKVToolNix
 sudo apt install mkvtoolnix
-
-# Obsidian
-flatpak install flathub md.obsidian.Obsidian
 
 # OBS Studio
 flatpak install flathub com.obsproject.Studio
