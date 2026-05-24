@@ -292,6 +292,9 @@ flatpak install flathub org.gnome.SoundJuicer
 # Stellarium
 sudo apt install stellarium
 
+# Sticky notes
+flatpak install flathub com.vixalien.sticky
+
 # Switcheroo
 flatpak install flathub io.gitlab.adhami3310.Converter
 
