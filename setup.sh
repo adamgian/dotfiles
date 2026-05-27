@@ -8,7 +8,7 @@
 # Sort out auth upfront
 sudo -v
 while true; do
-	sudo -n true;
+	sudo -v;
  	sleep 60;
   	kill -0 "$$" || exit;
 done 2>/dev/null &
@@ -94,9 +94,6 @@ wget https://central.github.com/deployments/desktop/desktop/latest/darwin \
 	&& rm "$HOME/Downloads/github-desktop.zip" \
 	&& sudo mv "$HOME/Downloads/GitHub Desktop.app" "/Applications/GitHub Desktop.app"
 
-# Neovim
-brew install neovim
-
 # Sublime Text
 wget https://download.sublimetext.com/sublime_text_build_4143_mac.zip \
 	-O "$HOME/Downloads/sublime-text-build.zip" \
@@ -135,9 +132,6 @@ brew install --cask imageoptim
 # Karabiner-elements
 brew install --cask karabiner-elements
 
-# Obsidian
-brew install --cask obsidian
-
 # OpenMTP
 brew install openmtp --cask
 
@@ -166,10 +160,12 @@ brew install --cask vlc
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock mineffect suck
 defaults write com.apple.dock static-only -bool true
+killall Dock
 
 # Finder
 defaults write com.apple.finder QuitMenuItem -bool true
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
+killall Finder
 # Open finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
