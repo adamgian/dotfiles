@@ -110,6 +110,9 @@ wget "https://packagecontrol.io/Package Control.sublime-package" \
 # Miscellaneous
 # ----------------------------------------------------------
 
+#Anki
+brew install --cask anki
+
 # Discord
 brew install --cask discord
 
