@@ -144,6 +144,7 @@ wget https://www.sdcard.org/downloads/formatter/eula_mac/SDCardFormatterv5_Mac.z
 	&& unzip "SDCardFormatter.zip" -d "$HOME/Downloads/" \
 	&& rm "SDCardFormatter.zip" \
 	&& sudo installer -pkg "$HOME/Downloads/SDCardFormatterv5_Mac/Install SD Card Formatter 5.0.2.mpkg" -target /
+	&& sudo rm -r "$HOME/Downloads/SDCardFormatterv5_Mac/"
 
 # Sketch
 brew install --cask sketch
