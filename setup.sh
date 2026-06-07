@@ -162,12 +162,14 @@ brew install --cask vlc
 
 # Dock
 defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock expose-group-apps -bool true
 defaults write com.apple.dock mineffect suck
 defaults write com.apple.dock static-only -bool true
 killall Dock
 
 # Finder
 defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 killall Finder
 # Open finder window when a volume is mounted
